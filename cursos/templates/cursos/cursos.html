@@ -4,4 +4,13 @@
 
 {% block body %}
     <h1>Cursos</h1>
+    <ul>
+        {% for curso in cursos %}
+            {% if curso.activo %}
+                <li>{{ curso }} ✅</li>
+            {% else %}
+                <li>{{ curso }} ❌</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 {% endblock %}
