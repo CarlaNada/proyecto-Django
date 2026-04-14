@@ -3,14 +3,33 @@
 {% block title %} Cursos {% endblock %}
 
 {% block body %}
-    <h1>Cursos</h1>
-    <ul>
+    <h1 class="font-lg flex justify-center text-xl font-bold">Cursos</h1>
+    
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 m-3">
+        
         {% for curso in cursos %}
-            {% if curso.activo %}
-                <li>{{ curso }} ✅</li>
-            {% else %}
-                <li>{{ curso }} ❌</li>
-            {% endif %}
+            <article class="bg-zinc-400 border rounded-lg">
+                <div class="p-5">
+                    <h5 class="font-semibold flex justify-center"> {{ curso.nombre }} </h5>
+                    <br>
+                    <p>Duracion: {{ curso.duracion }} meses</p>
+                    <br>
+                    {% if curso.activo %}
+                        Activo ✅
+                    {% else %}
+                        Inactivo ❌
+                    {% endif %}
+                </div>
+                    <a href="#" class="bg-blue-600 text-white p-2 rounded flex justify-top">Ver más</a>
+                
+            </article>
         {% endfor %}
+    
+    </section>
+    
+    <ul>
+        
+            
+        
     </ul>
 {% endblock %}

@@ -3,5 +3,21 @@
 {% block title %} Inicio {% endblock %}
 
 {% block body %}
-    <h1>Inicio</h1>
+    <section class="bg-zinc-300 gap-6 px-10 py-5 flex flex-col justify-center items-center text-center">
+        <h1 class="font-lg text-xl font-bold py-5">
+            Aprendé lo último en IA y tecnología con clases online en vivo
+        </h1>
+
+        <article>
+            <p class="font-semibold">
+                Cursos y carreras con clases online en vivo junto a expertos de la industria.
+                Accedé a una suscripción con workshops siempre actualizados con lo último de lo último en IA y tecnología, y creá tus propios cursos en minutos.
+            </p>
+        </article>
+
+        <div class="">
+            <a href="{% url 'cursos' %}" class="px-3 py-2 rounded-md text-sm font-medium bg-orange-500">Inscribirme ahora</a>
+        </div>
+    </section>
+    
 {% endblock %}

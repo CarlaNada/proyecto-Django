@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <nav>
-        <a href="{% url 'index' %}">Inicio</a>
-        <a href="{% url 'cursos' %}">Cursos</a>
+<body class="bg-zinc-200">
+    <nav class="bg-zinc-700 text-white flex justify-between items-center px-3 py-3 max-lg:hidden">
+        <div class="">
+            <a href="{% url 'index' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Inicio</a>
+            <a href="{% url 'cursos' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Cursos</a>
+        </div>
+
+        <div class="">
+            <a href="{% url 'cursos' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Inscribirme ahora</a>
+        </div>
     </nav>
     {% block body %}
     {% endblock %}
 </body>
 </html>
+
