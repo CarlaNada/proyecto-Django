@@ -3,15 +3,15 @@
 {% block title %} Cursos {% endblock %}
 
 {% block body %}
-    <h1 class="font-lg flex justify-center text-xl font-bold">Cursos</h1>
+    <h1 class="font-lg flex justify-center text-xl font-bold p-5">Cursos</h1>
     
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 m-3">
         
         {% for curso in cursos %}
             {% if curso.activo %}
-                <article class="border border-zinc-500 shadow-lg rounded-lg bg-white">
+                <article class="border border-zinc-400 shadow-lg rounded-lg bg-white">
                     <div class="p-5">
-                        <h5 class="font-semibold flex justify-center"> {{ curso.nombre }} </h5>
+                        <h5 class="font-semibold flex justify-center bg-zinc-200 p-2 rounded-md"> {{ curso.nombre }} </h5>
                         <br>
                         <p>Duracion: {{ curso.duracion }} semanas</p>
                         <br>
@@ -21,12 +21,15 @@
                         <br>
                         <p>Modalidad: {{curso.modalidad}}</p>
                     </div>
-                    <a href="#" class="bg-orange-500 text-white p-2 rounded flex justify-top">Comprar ahora</a>
+                    <div class="flex flex-col items-center">
+                        <a href="#" class="w-fit px-20 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Comprar ahora</a>
+                    </div>
+                    
                 </article>
             {% else %}
                 <article class="bg-zinc-400 border rounded-lg">
                     <div class="p-5">
-                        <h5 class="font-semibold flex justify-center"> {{ curso.nombre }} (Sin cupos) </h5>
+                        <h5 class="font-semibold flex justify-center p-2"> {{ curso.nombre }} </h5>
                         <br>
                         <p>Duracion: {{ curso.duracion }} semanas</p>
                         <br>
@@ -36,7 +39,9 @@
                         <br>
                         <p>Modalidad: {{curso.modalidad}}</p>
                     </div>
-                    <a href="#" class="bg-zinc-800 text-white p-2 rounded flex justify-top">Comprar ahora</a>
+                    <div class="flex flex-col items-center">
+                        <a href="#" class="w-fit px-20 py-2 mb-5 bg-zinc-800 text-white rounded rounded-3xl shadow-md border border-zinc-900">Sin cupos disponibles</a>
+                    </div>
                 </article>
             {% endif %}
         {% endfor %}
