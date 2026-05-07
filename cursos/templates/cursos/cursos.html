@@ -9,34 +9,34 @@
         
         {% for curso in cursos %}
             {% if curso.activo %}
-                <article class="bg-emerald-500 border rounded-lg">
+                <article class="border border-zinc-500 shadow-lg rounded-lg bg-white">
                     <div class="p-5">
                         <h5 class="font-semibold flex justify-center"> {{ curso.nombre }} </h5>
                         <br>
-                        <p>Duracion: {{ curso.duracion }} meses</p>
+                        <p>Duracion: {{ curso.duracion }} semanas</p>
                         <br>
                         <p>Precio: {{curso.precio}}</p>
                         <br>
                         <p>Nivel: {{curso.nivel}}</p>
                         <br>
-                        <!--<p>Modalidad: {{curso.modalidad}}</p>-->
+                        <p>Modalidad: {{curso.modalidad}}</p>
                     </div>
-                    <a href="#" class="bg-blue-600 text-white p-2 rounded flex justify-top">Ver más</a>
+                    <a href="#" class="bg-orange-500 text-white p-2 rounded flex justify-top">Comprar ahora</a>
                 </article>
             {% else %}
                 <article class="bg-zinc-400 border rounded-lg">
                     <div class="p-5">
                         <h5 class="font-semibold flex justify-center"> {{ curso.nombre }} (Sin cupos) </h5>
                         <br>
-                        <p>Duracion: {{ curso.duracion }} meses</p>
+                        <p>Duracion: {{ curso.duracion }} semanas</p>
                         <br>
                         <p>Precio: {{curso.precio}}</p>
                         <br>
                         <p>Nivel: {{curso.nivel}}</p>
                         <br>
-                        <!--<p>Modalidad: {{curso.modalidad}}</p>-->
+                        <p>Modalidad: {{curso.modalidad}}</p>
                     </div>
-                    <a href="#" class="bg-zinc-800 text-white p-2 rounded flex justify-top">Ver más</a>
+                    <a href="#" class="bg-zinc-800 text-white p-2 rounded flex justify-top">Comprar ahora</a>
                 </article>
             {% endif %}
         {% endfor %}
