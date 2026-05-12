@@ -1,18 +1,18 @@
 {% extends './base.html' %}
 
-{% block title %} Crear {% endblock %}
+{% block title %} Editar {% endblock %}
 
 {% block body %}
     <section class="bg-zinc-300 gap-6 px-10 py-5 flex flex-col justify-center items-center text-center">
         <h1 class="font-lg text-xl font-bold py-5">
-            Agregar Curso Nuevo
+            Editar Curso 
         </h1>
 
         <form class="flex flex-col items-start gap-5 border border-black p-5 rounded-lg bg-zinc-400" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
 
-            <button class="border border-black p-2 rounded-lg bg-zinc-200" type="submit">Save</button>
+            <button class="border border-black p-2 rounded-lg bg-zinc-200" type="submit">Guardar cambios</button>
         </form>
 
     </section>

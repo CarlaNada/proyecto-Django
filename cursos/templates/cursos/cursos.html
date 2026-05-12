@@ -24,6 +24,10 @@
                     <div class="flex flex-col items-center">
                         <a href="#" class="w-fit px-20 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Comprar ahora</a>
                     </div>
+                    <div class="flex justify-center gap-3 p-3">
+                        <a href="{% url 'editarCurso' curso.id %}" class="w-fit px-10 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Editar</a>
+                        <a href="{% url 'borrarCurso' curso.id %}" class="w-fit px-10 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Borrar</a>
+                    </div>
                     
                 </article>
             {% else %}
