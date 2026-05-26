@@ -1,19 +1,19 @@
-# [E-commerce de cursos]
+# E-commerce de cursos
 
 > **Sistema de ventas de cursos.**
 
 ![Banner del Proyecto](https://via.placeholder.com/1000x300?text=Logo+Institucional+o+Captura+del+Proyecto)
 
 ## 🏛️ Contexto
-* **Organización:** [Nombre de la Institución]
-* **Departamento:** [Nombre del Área/Departamento]
-* **Periodo:** [Mes/Año] - [Mes/Año]
+* **Organización:** ITec
+* **Materia:** Ingenieria de Software
+* **Periodo:** 03/2026 - 11/2026
 
-## 🎯 El Desafío
+## 🎯 Desafío
 Explica el problema que existía antes de tu intervención. 
 *Ejemplo: El proceso de registro de solicitudes se realizaba de forma manual en hojas de cálculo, lo que generaba duplicidad de datos y falta de trazabilidad.*
 
-## 💡 La Solución
+## 💡 Solución
 Describe cómo tu desarrollo resolvió el problema. Menciona los objetivos alcanzados y el valor agregado que aportaste como profesional.
 
 ## 🚀 Funcionalidades Clave
@@ -25,10 +25,10 @@ Describe cómo tu desarrollo resolvió el problema. Menciona los objetivos alcan
 ## 🛠️ Tecnologías Utilizadas
 | Capa | Tecnologías |
 | :--- | :--- |
-| **Frontend** | ![Tailwind]
-| **Backend** | ![Python]
-| **Base de Datos** | 
-| **DevOps** | 
+| **Frontend** | Tailwind
+| **Backend** | Python
+| **Base de Datos** | SQL
+| **DevOps** | -
 
 ## 📈 Impacto y Resultados
 Esta sección es vital para tu portfolio. Usa viñetas para resaltar logros cuantificables:
@@ -46,10 +46,29 @@ Aqui puedes insertar GIFs o imágenes de la aplicación (asegúrate de anonimiza
 ## 🏗️ Arquitectura
 Breve mención sobre patrones de diseño o arquitectura utilizada (ej. Clean Architecture, Microservicios, MVC).
 
+##  Ejecución
+- **Instalación del proyecto**
+   - Primero, clonamos el repo. Luego:
+    Creamos y activamos el entorno virtual:
+    ```
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+   - Instalamos Django desde el requirements
+    ```
+    pip install -r requirements.txt
+    ```
+
+   - Finalmente corremos el servidor de django
+    ```
+    python3 manage.py runserver
+    ```
+
 ---
 
 ## 👤 Autor
-**[Carla Nadalig]**
-- [LinkedIn](https://www.linkedin.com/in/tu-perfil/)
-- [Portfolio Personal](https://tu-sitio-web.com)
-- [Correo Electrónico](mailto:tu-email@ejemplo.com)
+**Carla Nadalig**
+- [LinkedIn](www.linkedin.com/in/carla-nadalig-)
+- [Portfolio Personal](https://github.com/CarlaNada)
+- [Correo Electrónico](mailto:carlanadalig.dev@gmail.com)
