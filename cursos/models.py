@@ -7,11 +7,17 @@ class Modalidad(models.Model):
     def __str__(self):
         return self.nombre
 
+    class Meta:
+        verbose_name_plural = "Modalidades"
+
 class Nivel(models.Model):
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre    
+        return self.nombre   
+
+    class Meta:
+        verbose_name_plural = "Niveles"
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=100)
@@ -37,3 +43,15 @@ class Curso(models.Model):
 
     def __str__(self):
         return f'Curso de {self.nombre}'
+    
+    class Meta:
+        verbose_name_plural = "Cursos disponible"
+        ordering = ["-id"]
+
+
+#DATOS DE PRUEBA
+#User = carla
+#Password = hola.123
+
+#User = magali
+#Password = magu.123

@@ -1,0 +1,25 @@
+{% extends 'cursos/base.html' %}
+
+{% block title %} Iniciar sesion {% endblock %}
+
+{% block body %}
+    <section class="bg-zinc-300 gap-6 px-10 py-5 flex flex-col justify-center items-center text-center">
+        <hr>
+        <h1 class="font-lg text-xl font-bold py-5">
+            Bienvenido!
+        </h1>
+
+        <form class="flex flex-col items-start gap-5 border border-black p-5 rounded-lg bg-zinc-400" method="POST">
+            <h3>Iniciar sesion</h3>
+            
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button class="border border-black p-2 rounded-lg bg-zinc-200" type="submit">Save</button>
+        </form>
+        
+        <a href="{% url 'register' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-400">Registrarse</a>
+        <a href="#" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-400">Olvide mi contrasena</a>
+    </section>
+    
+{% endblock %}

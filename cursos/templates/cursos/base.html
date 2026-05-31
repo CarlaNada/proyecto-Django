@@ -15,7 +15,15 @@
         </div>
 
         <div class="">
-            <a href="{% url 'cursos' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Inscribirme ahora</a>
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Cerrar sesion</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Iniciar sesion</a>            
+            {% endif %}
+            
         </div>
     </nav>
 </header>
