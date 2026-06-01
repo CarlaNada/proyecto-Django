@@ -1,5 +1,4 @@
 from django.db import models
-#from django.contrib.auth.model import User --> para acceder al modelo user de django
 
 class Modalidad(models.Model):
     nombre = models.CharField(max_length=50)
@@ -47,11 +46,4 @@ class Curso(models.Model):
     class Meta:
         verbose_name_plural = "Cursos disponible"
         ordering = ["-id"]
-
-
-#DATOS DE PRUEBA
-#User = carla
-#Password = hola.123
-
-#User = magali
-#Password = magu.123
+    
