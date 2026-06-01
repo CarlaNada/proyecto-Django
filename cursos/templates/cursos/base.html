@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,7 @@
             
         </div>
 
-        <div class="">
+        <div class="flex">
             {% if user.is_authenticated %}
                 <form action="{% url 'logout' %}" method="post">
                     {% csrf_token %}
@@ -26,7 +28,12 @@
             {% else %}
                 <a href="{% url 'login' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Iniciar sesion</a>            
             {% endif %}
-            
+
+            {% if user.foto %}
+                <img src="{{ user.foto.url }}" alt="Foto de perfil" class="flex w-8 h-8 rounded-full">
+            {% else %}
+                <img src="{% static 'images/foto_gatito.jpeg' %}" alt="Foto de perfil por defecto" class="flex w-8 h-8 rounded-full">
+            {% endif %}
         </div>
     </nav>
 </header>

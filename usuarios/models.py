@@ -9,13 +9,11 @@ class UsuarioPersonalizado(AbstractUser):
         null=True, 
         blank=True
     )
-    """
     foto = models.ImageField(
         upload_to='users_foto/', 
         null=True, 
         blank=True
     )
-    """
     def __str__(self):
         return f'{self.username}'
     
@@ -25,3 +23,6 @@ class UsuarioPersonalizado(AbstractUser):
 
 #User staff= mawli
 #Password = crud1234
+
+#User staff= gaston
+#Password = gastonton.321

@@ -8,7 +8,7 @@
             Crear usuario
         </h1>
 
-        <form class="flex flex-col items-start gap-5 border border-black p-5 rounded-lg bg-zinc-400" method="POST">
+        <form class="flex flex-col items-start gap-5 border border-black p-5 rounded-lg bg-zinc-400" method="POST" enctype="multipart/form-data">
             <h3>Nuevo usuario</h3>
             
             {% csrf_token %}
