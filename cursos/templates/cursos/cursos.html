@@ -3,37 +3,35 @@
 {% block title %} Cursos {% endblock %}
 
 {% block body %}
-    <h1 class="font-lg flex justify-center text-xl font-bold p-5">Cursos</h1>
+    <h1 class="font-xl flex justify-center text-5xl font-bold p-5">Cursos</h1>
+    <h3 class="font-md flex justify-center text-lg font-semibold p-5">Cursos de Inteligencia Artifical, Marketing Digital, Programación y Desarrollo Web, AI Automation, Data, Producto, Diseño UX/UI y más.</h3>
     
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 m-3">
-        
+        <!--busqueda y filtros-->
+
         {% for curso in cursos %}
             {% if curso.activo %}
                 <article class="border border-zinc-400 shadow-lg rounded-lg bg-white">
                     <div class="p-5">
-                        <h5 class="font-semibold flex justify-center bg-zinc-200 p-2 rounded-md"> {{ curso.nombre }} </h5>
-                        <br>
-                        <p>Duracion: {{ curso.duracion }} semanas</p>
-                        <br>
-                        <p>Precio: {{curso.precio}}</p>
-                        <br>
-                        <p>Nivel: {{curso.nivel}}</p>
-                        <br>
-                        <p>Modalidad: {{curso.modalidad}}</p>
+                        <h5 class="font-bold flex justify-center bg-zinc-200 p-2 mb-5 rounded-md"> {{ curso.nombre }} </h5>
+                        <p><b>Duración:</b> {{ curso.duracion }} semanas</p>
+                        <p><b>Precio:</b> {{curso.precio}}</p>
+                        <p><b>Nivel:</b> {{curso.nivel}}</p>
+                        <p><b>Modalidad:</b> {{curso.modalidad}}</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <a href="#" class="w-fit px-20 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Comprar ahora</a>
+                        <a href="#" class="w-fit px-20 py-2 bg-orange-500 text-white rounded rounded-3xl hover:bg-orange-600">Comprar ahora</a>
                     </div>
                     
                     <div class="flex justify-center">
                         {% if perms.cursos.change_curso %}
                             <div class="flex justify-center gap-3 p-3">
-                                <a href="{% url 'editarCurso' curso.id %}" class="w-fit px-10 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Editar</a>
+                                <a href="{% url 'editarCurso' curso.id %}" class="w-fit px-10 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl hover:bg-orange-600">Editar</a>
                             </div>
                         {% endif %}
                         {% if perms.cursos.delete_curso %}
                             <div class="flex justify-center gap-3 p-3">
-                                <a href="{% url 'borrarCurso' curso.id %}" class="w-fit px-10 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl shadow-md border border-orange-600">Borrar</a>
+                                <a href="{% url 'borrarCurso' curso.id %}" class="w-fit px-10 py-2 mb-5 bg-orange-500 text-white rounded rounded-3xl hover:bg-orange-600">Borrar</a>
                             </div>
                         {% endif %}
                     </div>
@@ -42,13 +40,9 @@
                 <article class="bg-zinc-400 border rounded-lg">
                     <div class="p-5">
                         <h5 class="font-semibold flex justify-center p-2"> {{ curso.nombre }} </h5>
-                        <br>
-                        <p>Duracion: {{ curso.duracion }} semanas</p>
-                        <br>
+                        <p>Duración: {{ curso.duracion }} semanas</p>
                         <p>Precio: {{curso.precio}}</p>
-                        <br>
                         <p>Nivel: {{curso.nivel}}</p>
-                        <br>
                         <p>Modalidad: {{curso.modalidad}}</p>
                     </div>
                     <div class="flex flex-col items-center">
@@ -59,10 +53,4 @@
         {% endfor %}
     
     </section>
-    
-    <ul>
-        
-            
-        
-    </ul>
 {% endblock %}

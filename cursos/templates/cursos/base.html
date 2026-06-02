@@ -8,38 +8,61 @@
     <title>{% block title %} {% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<header>
-    <nav class="bg-zinc-700 text-white flex justify-between items-center px-3 py-3 max-lg:hidden">
-        <div class="">
-            <a href="{% url 'index' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Inicio</a>
-            <a href="{% url 'cursos' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Cursos</a>
-            {% if perms.cursos.change_curso %}
-                <a href="{% url 'crearCurso' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Add Curso</a>
-            {% endif %}
-            
-        </div>
+<body class="flex flex-col min-h-screen bg-zinc-200 text-zinc-900">
+    <header>
+        <nav class="bg-zinc-700 text-white flex justify-between items-center px-3 py-3 max-lg:hidden">
+            <div>
+                <a href="{% url 'index' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Inicio</a>
+                <a href="{% url 'cursos' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Cursos</a>
+                {% if perms.cursos.change_curso %}
+                    <a href="{% url 'crearCurso' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Add Curso</a>
+                {% endif %}
+            </div>
 
-        <div class="flex">
-            {% if user.is_authenticated %}
-                <form action="{% url 'logout' %}" method="post">
-                    {% csrf_token %}
-                    <button type="submit" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Cerrar sesion</button>
-                </form>
-            {% else %}
-                <a href="{% url 'login' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Iniciar sesion</a>            
-            {% endif %}
+            <div class="flex items-center gap-3">
+                {% if user.is_authenticated %}
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Cerrar sesion</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-zinc-600">Iniciar sesion</a>            
+                {% endif %}
 
-            {% if user.foto %}
-                <img src="{{ user.foto.url }}" alt="Foto de perfil" class="flex w-8 h-8 rounded-full">
-            {% else %}
-                <img src="{% static 'images/foto_gatito.jpeg' %}" alt="Foto de perfil por defecto" class="flex w-8 h-8 rounded-full">
-            {% endif %}
+                {% if user.foto %}
+                    <img src="{{ user.foto.url }}" alt="Foto de perfil" class="flex w-8 h-8 rounded-full">
+                {% else %}
+                    <img src="{% static 'images/foto_default.jpeg' %}" alt="Foto de perfil por defecto" class="flex w-8 h-8 rounded-full">
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+    <main class="bg-zinc-200 flex-grow">
+        {% block body %}
+        {% endblock %}
+    </main>
+    <footer class="bg-zinc-700 text-white text-center p-3 mt-5">
+        <div class="mx-auto w-full max-w-screen-xl p-4 grid grid-cols-2">
+            <div>
+                <h2 class="font-semibold">Recursos</h2>
+                <ul>
+                    <li><a href="https://djangoproject.com/" class="hover:underline">Django</a></li>
+                    <li><a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-semibold">Contacto</h2>
+                <ul>
+                    <li><a href="https://github.com/CarlaNada" class="hover:underline">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/carla-nadalig-" class="hover:underline">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>
-</header>
-<body class="bg-zinc-200">
-    {% block body %}
-    {% endblock %}
+        <hr class="my-6 border-default sm:mx-auto lg:my-8" />
+        <div class="flex items-center"></div>
+            <p class="flex justify-center">&copy; 2026 Cursos Online. Todos los derechos reservados.</p>    
+        </div>
+    </footer>
 </body>
 </html>
 
