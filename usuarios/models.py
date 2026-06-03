@@ -24,5 +24,5 @@ class UsuarioPersonalizado(AbstractUser):
 #User staff= mawli
 #Password = crud1234
 
-#User staff= gaston
+#User comun= gaston
 #Password = gastonton.321

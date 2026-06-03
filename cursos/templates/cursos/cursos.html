@@ -3,15 +3,16 @@
 {% block title %} Cursos {% endblock %}
 
 {% block body %}
-    <h1 class="font-xl flex justify-center text-5xl font-bold p-5">Cursos</h1>
-    <h3 class="font-md flex justify-center text-lg font-semibold p-5">Cursos de Inteligencia Artifical, Marketing Digital, Programación y Desarrollo Web, AI Automation, Data, Producto, Diseño UX/UI y más.</h3>
-    
+    <div class="flex flex-col py-20">
+        <h1 class="font-xl flex justify-center text-5xl font-bold p-5">Cursos</h1>
+        <h3 class="font-md flex justify-center text-lg font-semibold p-5">Cursos de Inteligencia Artifical, Marketing Digital, Programación y Desarrollo Web, AI Automation, Data, Producto, Diseño UX/UI y más.</h3>
+    </div>
     <section class="grid grid-cols-1 md:grid-cols-3 gap-6 m-3">
         <!--busqueda y filtros-->
 
         {% for curso in cursos %}
             {% if curso.activo %}
-                <article class="border border-zinc-400 shadow-lg rounded-lg bg-white">
+                <article class="border border-zinc-400 shadow-lg rounded-lg bg-white py-3">
                     <div class="p-5">
                         <h5 class="font-bold flex justify-center bg-zinc-200 p-2 mb-5 rounded-md"> {{ curso.nombre }} </h5>
                         <p><b>Duración:</b> {{ curso.duracion }} semanas</p>
@@ -37,7 +38,7 @@
                     </div>
                 </article>
             {% else %}
-                <article class="bg-zinc-400 border rounded-lg">
+                <article class="bg-zinc-400 border rounded-lg py-3">
                     <div class="p-5">
                         <h5 class="font-semibold flex justify-center p-2"> {{ curso.nombre }} </h5>
                         <p>Duración: {{ curso.duracion }} semanas</p>
@@ -46,7 +47,7 @@
                         <p>Modalidad: {{curso.modalidad}}</p>
                     </div>
                     <div class="flex flex-col items-center">
-                        <a href="#" class="w-fit px-20 py-2 mb-5 bg-zinc-800 text-white rounded rounded-3xl shadow-md border border-zinc-900">Sin cupos disponibles</a>
+                        <a href="#" class="w-fit px-20 py-2 mb-5 bg-zinc-800 text-white rounded rounded-3xl border-zinc-900">Sin cupos disponibles</a>
                     </div>
                 </article>
             {% endif %}
